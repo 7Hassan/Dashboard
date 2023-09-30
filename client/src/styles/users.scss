@@ -1,0 +1,227 @@
+@import './helpers/variables.scss';
+@import './helpers/responsive.scss';
+
+button {
+  cursor: pointer;
+
+  & .btn {
+    padding: 5px 10px;
+    background-color: white;
+    color: $soft-bg;
+    border-radius: 10px;
+  }
+}
+
+.dataTable {
+  max-width: 85%;
+
+  @include sm {
+    max-width: 75%;
+  }
+
+  .dataGrid {
+    .MuiDataGrid-toolbarContainer {
+      flex-direction: row-reverse;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .action {
+      display: flex;
+      gap: 15px;
+
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.add {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.724);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: $main-bg;
+    position: relative;
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 24px;
+      color: $soft-color;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 500px;
+      justify-content: space-between;
+
+      .item {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        label {
+          font-size: 14px;
+        }
+
+        input {
+          padding: 10px;
+          background-color: transparent;
+          color: white;
+          outline: none;
+          border: 1px solid $soft-color;
+          border-radius: 3px;
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+
+
+.single {
+  display: flex;
+
+  @include xl {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .view {
+    flex: 1;
+
+    .info {
+      .topInfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 20px;
+          object-fit: cover;
+        }
+
+        h1 {
+          font-weight: 500;
+        }
+      }
+
+      .details {
+        font-size: 18px;
+
+        .item {
+          margin: 30px 0px;
+
+          .itemTitle {
+            font-weight: 600;
+            margin-right: 10px;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    hr {
+      width: 90%;
+      height: 0;
+      border: 0.5px solid gray;
+      margin: 20px 0px;
+
+      @include md {
+        display: none;
+      }
+    }
+
+    .chart {
+      margin-top: 50px;
+      width: 80%;
+      height: 400px;
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+
+  .activities {
+    flex: 1;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        list-style-type: none;
+        position: relative;
+        width: 1px;
+        padding-top: 50px;
+        background-color: #f45b69;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #f45b69;
+          transform: translateX(-50%);
+        }
+
+        div {
+          min-width: 480px;
+          padding: 15px;
+          background-color: #f45b6810;
+
+          @include md {
+            min-width: 250px;
+          }
+
+          p {
+            margin-bottom: 5px;
+          }
+
+          time {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
