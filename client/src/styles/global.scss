@@ -23,7 +23,6 @@ a {
     overflow: hidden;
 
     @include xxl {
-      background-color: red;
     }
 
     @include xl {
